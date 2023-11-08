@@ -1,4 +1,9 @@
-const setupInput = function() {
+// Stores the active TCP connection object.
+let connection;
+
+// Update the setupInput() function to accept a single parameter and assign its value to the connection variable.
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -13,18 +18,19 @@ const handleUserInput = function(data) {
     process.exit();
   }
   if (data === 'w') {
-    console.log("Move: up");
+    connection.write("Move: up");
   }
   if (data === 'a') {
-    console.log("Move: left");
+    connection.write("Move: left");
   }
   if (data === 's') {
-    console.log("Move: down");
+    connection.write("Move: down");
   }
-  if (data === 'a') {
-    console.log("Move: right");
+  if (data === 'd') {
+    connection.write("Move: right");
   }
 };
+
 
 module.exports = {
   setupInput
