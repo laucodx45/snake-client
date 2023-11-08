@@ -1,5 +1,5 @@
 // Stores the active TCP connection object.
-const {MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY} = require('./constants');
+const {MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, messageObj} = require('./constants');
 let connection;
 
 // Update the setupInput() function to accept a single parameter and assign its value to the connection variable.
@@ -30,11 +30,8 @@ const handleUserInput = function(data) {
   if (data === MOVE_RIGHT_KEY) {
     connection.write("Move: right");
   }
-  if (data === 'k') {
-    connection.write("Say: ME AS A BABY");
-  }
-  if (data === 'l') {
-    connection.write("Say: I DREAM RECURSION");
+  if (messageObj[data]) {
+    connection.write(messageObj[data]);
   }
 };
 
