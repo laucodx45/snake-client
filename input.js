@@ -29,6 +29,12 @@ const handleUserInput = function(data) {
   if (data === 'd') {
     connection.write("Move: right");
   }
+  if (data === 'k') {
+    connection.write("Say: ME AS A BABY");
+  }
+  if (data === 'l') {
+    connection.write("Say: I DREAM RECURSION");
+  }
 };
 
 
