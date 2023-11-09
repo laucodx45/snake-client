@@ -2,7 +2,6 @@
 const {MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, messageObj} = require('./constants');
 let connection;
 
-// Update the setupInput() function to accept a single parameter and assign its value to the connection variable.
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -13,11 +12,12 @@ const setupInput = function(conn) {
   stdin.on("data", handleUserInput);
   return stdin;
 };
-
+// callback function that process client's keyboard input
 const handleUserInput = function(data) {
   if (data === '\u0003') {
     process.exit();
   }
+  // connection.write sends data to snek-multiplayer server
   if (data === MOVE_UP_KEY) {
     connection.write("Move: up");
   }
@@ -34,7 +34,6 @@ const handleUserInput = function(data) {
     connection.write(messageObj[data]);
   }
 };
-
 
 module.exports = {
   setupInput
