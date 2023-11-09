@@ -1,6 +1,7 @@
 const net = require("net");
 const {IP, PORT, playerName} = require('./constants');
 const { platform } = require("os");
+
 // establishes a connection with the game server
 const connect = () => {
   const conn = net.createConnection({
