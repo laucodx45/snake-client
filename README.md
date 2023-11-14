@@ -7,13 +7,13 @@ This is simply a multiplayer take on the genre.
 Before you can run this client, you will need to be running the server side which you can download and install from here.
 
 ## Final Product
-
+* A screenshot of the gameplay
 !["screenshot of snek-multiplayer game"](snek-multiplayer.jpg)
 
 ## Getting Started
 
 * Follow steps inside the snek server repo to run the server side
 * Run the development snake client using the `node play.js` command.
-* Use key w to move up, s to move left, d to move right and s to move down
-* press ctrl + c to quit game
+* Use key 'w' to move up, 's' to move left, 'd' to move right and 's' to move down
+* Press ctrl + c to quit game
 * Change user name, movement key and special messages in constants.js file
