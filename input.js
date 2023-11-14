@@ -1,5 +1,6 @@
-// Stores the active TCP connection object.
 const {MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, messageObj} = require('./constants');
+
+// Stores the active TCP connection object
 let connection;
 
 const setupInput = function(conn) {
@@ -12,6 +13,7 @@ const setupInput = function(conn) {
   stdin.on("data", handleUserInput);
   return stdin;
 };
+
 // callback function that process client's keyboard input
 const handleUserInput = function(data) {
   if (data === '\u0003') {
