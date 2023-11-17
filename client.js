@@ -1,6 +1,5 @@
 const net = require("net");
 const {IP, PORT, playerName} = require('./constants');
-const { platform } = require("os");
 
 // establishes a connection with snek-multiplayer server
 const connect = () => {
