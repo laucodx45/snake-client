@@ -1,4 +1,4 @@
-const {MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, messageObj} = require('./constants');
+const {movementObj, messageObj} = require('./constants');
 
 // Stores the active TCP connection object
 let connection;
@@ -20,16 +20,16 @@ const handleUserInput = function(data) {
     process.exit();
   }
   // connection.write sends data to snek-multiplayer server
-  if (data === MOVE_UP_KEY) {
+  if (data === movementObj.MOVE_UP_KEY) {
     connection.write("Move: up");
   }
-  if (data === MOVE_LEFT_KEY) {
+  if (data === movementObj.MOVE_LEFT_KEY) {
     connection.write("Move: left");
   }
-  if (data === MOVE_DOWN_KEY) {
+  if (data === movementObj.MOVE_DOWN_KEY) {
     connection.write("Move: down");
   }
-  if (data === MOVE_RIGHT_KEY) {
+  if (data === movementObj.MOVE_RIGHT_KEY) {
     connection.write("Move: right");
   }
   if (messageObj[data]) {
